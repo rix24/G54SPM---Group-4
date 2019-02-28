@@ -21,7 +21,7 @@ public class ColiderController : MonoBehaviour
     }
      void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collides11"+other.tag.ToString());
+        Debug.Log("Collides"+other.tag.ToString());
         if (other.tag == "yellow" || other.tag == "green" || other.tag == "blue" || other.tag == "orange")
         {
             textc.text = other.tag.ToString();
