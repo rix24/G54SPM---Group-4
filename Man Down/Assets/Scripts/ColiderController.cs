@@ -19,20 +19,20 @@ public class ColiderController : MonoBehaviour
     {
         
     }
-     void OnTriggerEnter(Collider other)
+     void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Collides"+other.tag.ToString());
-        if (other.tag == "yellow" || other.tag == "green" || other.tag == "blue" || other.tag == "orange")
+        Debug.Log("Collides"+other.gameObject.tag.ToString());
+        if (other.gameObject.tag == "yellow" || other.gameObject.tag == "green" || other.gameObject.tag == "blue" || other.gameObject.tag == "orange")
         {
-            textc.text = other.tag.ToString();
+            textc.text = other.gameObject.tag.ToString();
 
         }
 
     }
-     void OnTriggerExit(Collider other)
+     void OnCollisionExit(Collision other)
     {
-        Debug.Log("Collides");
-        Destroy(other.gameObject);
+        Debug.Log("Collidess");
+       // Destroy(other.gameObject);
     }
     private void randomGenerator() {
         int randomColorCode = Random.Range(0, 4);
