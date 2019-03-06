@@ -11,7 +11,7 @@ public class ColiderController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        randomGenerator();
+		
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class ColiderController : MonoBehaviour
     }
      void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Collides"+other.gameObject.tag.ToString());
+        //Debug.Log("Collides"+other.gameObject.tag.ToString());
         if (other.gameObject.tag == "yellow" || other.gameObject.tag == "green" || other.gameObject.tag == "blue" || other.gameObject.tag == "orange")
         {
             textc.text = other.gameObject.tag.ToString();
@@ -31,15 +31,8 @@ public class ColiderController : MonoBehaviour
     }
      void OnCollisionExit(Collision other)
     {
-        Debug.Log("Collidess");
+       // Debug.Log("Collidess");
        // Destroy(other.gameObject);
     }
-    private void randomGenerator() {
-        int randomColorCode = Random.Range(0, 4);
-        Console.WriteLine(randomColorCode);
-        String[] colorValue = new String[] { "Yellow", "Orange", "Green", "Blue"};
-        textc.text = colorValue[randomColorCode];
-       // Debug.Log("randomColorCode"+ randomColorCode);
-
-    }
+   
 }
