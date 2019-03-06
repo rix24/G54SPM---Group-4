@@ -23,8 +23,8 @@ public class FlickerController : MonoBehaviour
     }
 	 private void randomGenerator() {
         String[] colorValue = new String[] { "yellow", "orange", "green", "blue"};
-       for(int i=1;i< colorValue.Length;i++){
-			int randomColorCode=Random.Range(0,4);
+       for(int i=0;i< colorValue.Length;i++){
+			int randomColorCode=Random.Range(0,3);
 
 			Debug.Log("randomColorCode "+colorValue[randomColorCode]);
 			GameObject tagName = GameObject.FindWithTag(colorValue[randomColorCode]);
