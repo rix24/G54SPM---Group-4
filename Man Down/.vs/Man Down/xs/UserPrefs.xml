@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{21E3151B-785D-F771-9AA5-5754DA25FABD}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WallCollision.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerCollision.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerCollision.cs" Line="34" Column="1" />
-      <File FileName="Assets/Scripts/WallCollision.cs" Line="9" Column="33" />
+      <File FileName="Assets/Scripts/WallSeq.cs" Line="43" Column="12" />
+      <File FileName="Assets/Scripts/WallCollision.cs" Line="10" Column="6" />
+      <File FileName="Assets/Scripts/PlayerCollision.cs" Line="18" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
