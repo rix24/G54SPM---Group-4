@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WallSeq : MonoBehaviour
 {
-    GameObject eWY, sWY, wWG, nWG, eWB, nWB, wWO, sWO;
+    GameObject eWY, sWY, wWG, nWG, eWB, nWB, wWO, sWO,plane;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -20,7 +20,8 @@ public class WallSeq : MonoBehaviour
         nWB = GameObject.Find("northWallBlue");
         wWO = GameObject.Find("westWallOrange");
         sWO = GameObject.Find("southWallOrange");
-
+		plane = GameObject.Find("Plane");
+		
         while (life == 1)
         {   
 
@@ -29,6 +30,8 @@ public class WallSeq : MonoBehaviour
             if((wWG.gameObject.GetComponent<Renderer>().material.color == Color.red) && (nWG.gameObject.GetComponent<Renderer>().material.color == Color.red) && (eWY.gameObject.GetComponent<Renderer>().material.color == Color.red) && (sWY.gameObject.GetComponent<Renderer>().material.color == Color.red) && (eWB.gameObject.GetComponent<Renderer>().material.color == Color.red) && (nWB.gameObject.GetComponent<Renderer>().material.color == Color.red) && (wWO.gameObject.GetComponent<Renderer>().material.color == Color.red) && (sWO.gameObject.GetComponent<Renderer>().material.color == Color.red))
             {
                 life = 0;
+				ScoreController scoreObj = plane.gameObject.GetComponent<ScoreController>();
+				scoreObj.stopScore();
             }
 
             if (diceroll == 1)
