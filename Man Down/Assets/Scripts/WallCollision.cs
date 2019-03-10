@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WallCollision : MonoBehaviour
 {   
-    GameObject eWY,sWY,wWG,nWG,eWB,nWB,wWO,sWO;
+    GameObject eWY,sWY,wWG,nWG,eWB,nWB,wWO,sWO,obstacle,plane;
 
     private IEnumerator OnCollisionEnter(UnityEngine.Collision collisionInfo)
     {
@@ -25,6 +25,10 @@ public class WallCollision : MonoBehaviour
         nWB = GameObject.Find("northWallBlue");
         wWO = GameObject.Find("westWallOrange");
         sWO = GameObject.Find("southWallOrange");
+	   obstacle = GameObject.Find("obstacle");
+	   plane = GameObject.Find("Plane");
+	   
+		  
 
         if (collisionInfo.gameObject.name == "westWallGreen")
         { 
@@ -66,6 +70,13 @@ public class WallCollision : MonoBehaviour
             collisionInfo.gameObject.GetComponent<Renderer>().material.color = orangea;
             yield return new WaitForSeconds(0.2F);
             sWO.gameObject.GetComponent<Renderer>().material.color = orange;
-        } 
+        }else if (collisionInfo.gameObject.name == "obstacle"){
+			Debug.Log("Collidess");
+			Destroy(collisionInfo.gameObject);
+			ScoreController scoreObj = plane.gameObject.GetComponent<ScoreController>();
+				scoreObj.reduceScore();
+			
+		}
     }
+	 
 }
