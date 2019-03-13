@@ -32,7 +32,14 @@ public class playerController : MonoBehaviour
             other.gameObject.SetActive(false);
             ScoreController scoreObj = plane.gameObject.GetComponent<ScoreController>();
             scoreObj.increaseScore();
+        }else if (other.gameObject.CompareTag("Hazard"))
+        {
+            other.gameObject.SetActive(false);
+            ScoreController scoreObj = plane.gameObject.GetComponent<ScoreController>();
+            scoreObj.decreaseScore();
         }
     }
+
+
 
 }

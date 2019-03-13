@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\playerController.cs" />
     <Compile Include="Assets\Scripts\Rotate.cs" />
     <Compile Include="Assets\Scripts\ScoreController.cs" />
+    <Compile Include="Assets\Scripts\Spawn.cs" />
     <Compile Include="Assets\Scripts\WallCollision.cs" />
     <Compile Include="Assets\Scripts\WallSeq.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

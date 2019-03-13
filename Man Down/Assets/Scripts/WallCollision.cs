@@ -70,13 +70,8 @@ public class WallCollision : MonoBehaviour
             collisionInfo.gameObject.GetComponent<Renderer>().material.color = orangea;
             yield return new WaitForSeconds(0.2F);
             sWO.gameObject.GetComponent<Renderer>().material.color = orange;
-        }else if (collisionInfo.gameObject.name == "obstacle"){
-			Debug.Log("Collidess");
-			Destroy(collisionInfo.gameObject);
-		//ScoreController scoreObj = plane.gameObject.GetComponent<ScoreController>();
-				//scoreObj.reduceScore();
-			
-		}
+        }
+		
     }
 	 
 }

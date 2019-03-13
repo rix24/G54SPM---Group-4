@@ -12,12 +12,11 @@ public class ScoreController : MonoBehaviour
 	bool flag=true;
 	
 	
-    void Update()
-	{
-			if(flag==true){
-				scoreTimer+=1;
-				setScores(scoreTimer);
-			}
+    void Update(){
+        if(flag==true){
+            scoreTimer+=1;
+            setScores(scoreTimer);
+        }
     }
 	public void setScores(float scores){
 		scoreDisplayText.text = "Score : "+scores;
@@ -32,4 +31,10 @@ public class ScoreController : MonoBehaviour
 		scoreDisplayText.text = "Score : "+temp;
 		scoreTimer+=100;
 	}
+    public void decreaseScore()
+    {
+        temp -= 100;
+        scoreDisplayText.text = "Score : " + temp;
+        scoreTimer -= 100;
+    }
 }
