@@ -60,9 +60,9 @@ public class WallSeq : MonoBehaviour
             else if (diceroll == 8){
                 sWO.gameObject.GetComponent<Renderer>().material.color = Color.red;
             }
-            if (x >= 0.12F)
+            if (x >= 0.25F)
             {
-                x -= 0.01F;
+                x -= 0.005F;
             }
             yield return new WaitForSeconds(x);
         }
