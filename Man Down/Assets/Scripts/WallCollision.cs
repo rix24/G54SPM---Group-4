@@ -73,8 +73,8 @@ public class WallCollision : MonoBehaviour
         }else if (collisionInfo.gameObject.name == "obstacle"){
 			Debug.Log("Collidess");
 			Destroy(collisionInfo.gameObject);
-			ScoreController scoreObj = plane.gameObject.GetComponent<ScoreController>();
-				scoreObj.reduceScore();
+		//ScoreController scoreObj = plane.gameObject.GetComponent<ScoreController>();
+				//scoreObj.reduceScore();
 			
 		}
     }

@@ -27,13 +27,9 @@ public class ScoreController : MonoBehaviour
 		scoreDisplayText.text = "Score : "+temp;
 		flag=false;
 	}
-	public void reduceScore(){
-		Debug.Log("Temp::"+temp);
-		negScoreText.text="You have hit the obstacle.You lost -100 points!";
-		temp-=100;
-		Debug.Log("Temp::"+temp);
+	public void increaseScore(){
+		temp+=100;
 		scoreDisplayText.text = "Score : "+temp;
-		scoreTimer-=100;
-
+		scoreTimer+=100;
 	}
 }
