@@ -11,6 +11,7 @@ TagManager:
   - Trigger
   - Collectable
   - Hazard
+  - player
   layers:
   - Default
   - TransparentFX

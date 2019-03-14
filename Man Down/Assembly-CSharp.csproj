@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\ScoreController.cs" />
     <Compile Include="Assets\Scripts\SpawnController.cs" />
     <Compile Include="Assets\Scripts\WallCollision.cs" />
+    <Compile Include="Assets\Scripts\wallDing.cs" />
     <Compile Include="Assets\Scripts\WallSeq.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/default/Documents/University/Masters_Year/G54SPM/Game-Fixed/Man Down/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
