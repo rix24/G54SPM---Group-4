@@ -13,7 +13,6 @@ public class playerController : MonoBehaviour
         rBody = GetComponent<Rigidbody>();
         plane = GameObject.Find("Plane");
         collectable = GameObject.Find("PickUps");
-
     }
     void FixedUpdate()
     {
@@ -32,9 +31,17 @@ public class playerController : MonoBehaviour
             other.gameObject.SetActive(false);
             ScoreController scoreObj = plane.gameObject.GetComponent<ScoreController>();
             scoreObj.increaseScore();
-        }else if (other.gameObject.CompareTag("Hazard"))
+        }/*else if (other.gameObject.CompareTag("Hazard"))
         {
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
+            ScoreController scoreObj = plane.gameObject.GetComponent<ScoreController>();
+            scoreObj.decreaseScore();
+        }*/
+    }
+    private void OnCollisionEnter(UnityEngine.Collision collisionInfo)
+    {
+        if (collisionInfo.gameObject.name == "ObstacleY" || collisionInfo.gameObject.name == "ObstacleO" || collisionInfo.gameObject.name == "ObstacleG" || collisionInfo.gameObject.name == "ObstacleB")
+        {
             ScoreController scoreObj = plane.gameObject.GetComponent<ScoreController>();
             scoreObj.decreaseScore();
         }

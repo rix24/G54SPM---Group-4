@@ -17,7 +17,7 @@ public class SpawnController : MonoBehaviour
 
         //Debug.Log("collectables::" + collectables.Length);
         InvokeRepeating("RandomCollectables", 2.0f, 1.8f);
-        InvokeRepeating("RandomHazar", 10.0f, 5f);
+        InvokeRepeating("RandomHazard", 8.0f, 5f);
 
     }
 
@@ -34,7 +34,7 @@ public class SpawnController : MonoBehaviour
 
     }
 
-    void RandomHazar()
+    void RandomHazard()
     {
 
         for (int i = 0; i < hazard.Length; i++)
