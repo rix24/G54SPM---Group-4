@@ -9,6 +9,7 @@ public class ScoreController : MonoBehaviour
     float temp;
     bool flag=true;
     GameObject sphere,plane;
+	//private Endscene endscene;
     void Update(){
         if(flag==true){
             scoreTimer+=1;
@@ -23,12 +24,14 @@ public class ScoreController : MonoBehaviour
         scoreDisplayText.text = "Score : "+temp;
         flag=false;
         sphere = GameObject.Find("Sphere");
-        //plane = GameObject.Find("Plane");
         playerController endGame = sphere.gameObject.GetComponent<playerController>();
-       // SpawnController endGame2 = plane.gameObject.GetComponent<SpawnController>();
         endGame.GameEnd();
-       // endGame2.stopSpawn();
+		//endscene = GameObject.Find("EndScript").GetComponent<Endscene>();
+        //EndScript endGamescore = plane.gameObject.GetComponent<EndScript>();
+		  //     endscene.DisplayScore(temp);
+
 	    Application.LoadLevel(2);
+        
     }
     public void increaseScore(){
         if (flag != false)
