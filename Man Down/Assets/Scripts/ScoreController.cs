@@ -28,6 +28,7 @@ public class ScoreController : MonoBehaviour
        // SpawnController endGame2 = plane.gameObject.GetComponent<SpawnController>();
         endGame.GameEnd();
        // endGame2.stopSpawn();
+	    Application.LoadLevel(2);
     }
     public void increaseScore(){
         if (flag != false)

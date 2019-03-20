@@ -16,6 +16,7 @@ public class LoaderScript : MonoBehaviour
         
     }
 	public void PlayGame(){
+		Debug.Log("plays");
   Application.LoadLevel(1);	}
 	public void QuitGame(){
  Application.Quit();	}
