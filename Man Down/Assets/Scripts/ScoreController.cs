@@ -4,13 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ScoreController : MonoBehaviour
 {
-  public Text scoreDisplayText,negScoreText;
+  public Text scoreDisplayText,negScoreText,scorer;
     float scoreTimer=0f;
     float temp;
     bool flag=true;
-    GameObject sphere,plane;
-	//private Endscene endscene;
-    void Update(){
+    GameObject sphere,plane,panel;
+
+
+
+void Start(){
+	 panel =GameObject.Find("Panel");
+		panel.gameObject.SetActive(false);
+}
+   void Update(){
         if(flag==true){
             scoreTimer+=1;
             setScores(scoreTimer);
@@ -22,15 +28,15 @@ public class ScoreController : MonoBehaviour
     }
     public void stopScore(){
         scoreDisplayText.text = "Score : "+temp;
+
         flag=false;
         sphere = GameObject.Find("Sphere");
         playerController endGame = sphere.gameObject.GetComponent<playerController>();
         endGame.GameEnd();
-		//endscene = GameObject.Find("EndScript").GetComponent<Endscene>();
-        //EndScript endGamescore = plane.gameObject.GetComponent<EndScript>();
-		  //     endscene.DisplayScore(temp);
+		panel.gameObject.SetActive(true);
+				scorer.text =  "Your Score : "+temp;
 
-	    Application.LoadLevel(2);
+	    //Application.LoadLevel(2);
         
     }
     public void increaseScore(){
@@ -42,6 +48,7 @@ public class ScoreController : MonoBehaviour
         }
     
     }
+	
     public void decreaseScore()
     {
         if (flag != false)

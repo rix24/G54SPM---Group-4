@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class EndScript : MonoBehaviour
 {
 	Text score;
+	GameObject panel;
     // Start is called before the first frame update
     void Start()
     {
-        
+         panel =GameObject.Find("Panel");
     }
 
     // Update is called once per frame
@@ -19,9 +20,8 @@ public class EndScript : MonoBehaviour
         
     }
 	public void RestartGame(){
- Application.LoadLevel(1);
+                Application.LoadLevel(Application.loadedLevel);
+				panel.gameObject.SetActive(false);
 	}
-	public void DisplayScore(float scores){
-		score.text = "Your Score : "+scores;
-	}
+	
 }
