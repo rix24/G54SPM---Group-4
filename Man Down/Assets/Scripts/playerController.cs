@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class playerController : MonoBehaviour
 {
     public float acceleration;
     private Rigidbody rBody;
     GameObject collectable,plane;
-
+    bool move = true;
     void Start()
     {
         rBody = GetComponent<Rigidbody>();
@@ -18,12 +17,13 @@ public class playerController : MonoBehaviour
     {
         float verticalMove = Input.GetAxis("Vertical");
         float horizontalMove = Input.GetAxis("Horizontal");
-
         Vector3 controller = new Vector3(horizontalMove, 0.0f, verticalMove);
-
+        if(move == false)
+        {
+            acceleration = 0;
+        }
         rBody.AddForce(controller * acceleration);
     }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Collectable"))
@@ -46,7 +46,8 @@ public class playerController : MonoBehaviour
             scoreObj.decreaseScore();
         }
     }
-
-
-
+    public void GameEnd()
+    {
+        move=false;
+    }
 }
