@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class EndScript : MonoBehaviour
 {
-	Text score;
+	
 	GameObject panel;
     // Start is called before the first frame update
     void Start()

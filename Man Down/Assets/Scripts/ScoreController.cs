@@ -15,6 +15,7 @@ public class ScoreController : MonoBehaviour
 void Start(){
 	 panel =GameObject.Find("Panel");
 		panel.gameObject.SetActive(false);
+		scorer.text="";
 }
    void Update(){
         if(flag==true){
@@ -28,14 +29,14 @@ void Start(){
     }
     public void stopScore(){
         scoreDisplayText.text = "Score : "+temp;
-
         flag=false;
         sphere = GameObject.Find("Sphere");
         playerController endGame = sphere.gameObject.GetComponent<playerController>();
-        endGame.GameEnd();
+       
 		panel.gameObject.SetActive(true);
-				scorer.text =  "Your Score : "+temp;
+		scorer.text =  "Your Score : "+temp;
 
+ endGame.GameEnd();
 	    //Application.LoadLevel(2);
         
     }
